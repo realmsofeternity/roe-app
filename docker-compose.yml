@@ -5,6 +5,8 @@ services:
     container_name: roe-app
     env_file:
       - /srv/roe/.env
+    environment:
+      - APP_VERSION=0.0.2
     ports:
       - "8080:8080"
     networks:
