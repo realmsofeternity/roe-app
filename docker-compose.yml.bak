@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  roe-app:
+    build:
+      context: /srv/roe/roe-app
+    container_name: roe-app
+    env_file:
+      - /srv/roe/.env
+    ports:
+      - "8080:8080"
+    networks:
+      - roe-net
+    restart: unless-stopped
+
+networks:
+  roe-net:
+    external: true
