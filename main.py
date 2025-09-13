@@ -14,3 +14,6 @@ def health():
         "version": os.getenv("APP_VERSION", "0.0.1"),
         "env": os.getenv("APP_ENV", "production")
     }
+@app.get("/hello")
+def hello(name: str = "traveler"):
+    return {"message": f"Hello, {name}!"}
